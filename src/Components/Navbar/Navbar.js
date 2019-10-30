@@ -11,9 +11,9 @@ class Navigation extends Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link className="navItem" href="#home">Home</Nav.Link>
-                        <Nav.Link className="navItem" href="#link">About</Nav.Link>
-                        <Nav.Link className="navItem" href="#link">Contact</Nav.Link>
+                        <Nav.Link bsPrefix="navbar-item" className="navItem" href="#home">Home</Nav.Link>
+                        <Nav.Link bsPrefix="navbar-item" className="navItem" href="#link">About</Nav.Link>
+                        <Nav.Link bsPrefix="navbar-item" className="navItem" href="#link">Contact</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
