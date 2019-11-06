@@ -16,11 +16,12 @@ class App extends Component {
   showModal = e => {
     this.setState({
       show: !this.state.show,
-      toggledStylings: "modal"
+      toggledStylings: "testModal"
     })
   }
 
   render() {
+
     let displayModal = null;
     if (!this.state.show) {
       displayModal = <button
@@ -33,11 +34,13 @@ class App extends Component {
     }
 
     return (
-      <div className={this.state.toggledStylings}>
+      <div>
         <Navigation />
         <KBCard />
         {displayModal}
-        <Modal onClose={this.showModal} show={this.state.show}>Message in Modal</Modal>
+        <div className={this.state.toggledStylings}>
+          <Modal onClose={this.showModal} show={this.state.show}>Message in Modal</Modal>
+        </div>
       </div>
     );
   }
