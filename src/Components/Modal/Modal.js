@@ -1,26 +1,17 @@
 import React, { Component } from 'react';
+import './Modal.css'
 
 export default class Modal extends Component {
-    onClose = e => {
-        // this.props.show = false;
-        this.props.onClose && this.props.onClose(e);
-    }
-
     render() {
+        let classSet = ["test"];
         if (!this.props.show) {
-            return null;
+            classSet = ["test", "off"]
+        } else {
+            classSet = ["test"]
         }
         return (
-            <div className="App">
-                <div>{this.props.children}</div>
-                <div>
-                    <button onClose={e => {
-                        this.onClose(e);
-                    }}
-                    >
-                        Close
-                    </button>
-                </div>
+            <div className={classSet.join(' ')}>
+                <div className="content">{this.props.children}</div>
             </div>
         )
     }

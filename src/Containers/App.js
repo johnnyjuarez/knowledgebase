@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import Navigation from '../Components/Navbar/Navbar'
 import KBCard from '../Components/KBCard/KBCard'
 import Modal from '../Components/Modal/Modal'
@@ -8,26 +8,37 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      show: false
+      show: false,
+      toggledStylings: null
     }
   }
 
   showModal = e => {
     this.setState({
-      show: !this.state.show
+      show: !this.state.show,
+      toggledStylings: "modal"
     })
   }
 
   render() {
+    let displayModal = null;
+    if (!this.state.show) {
+      displayModal = <button
+        onClick={e => { this.showModal() }}
+      >Show Modal</button>
+    } else {
+      displayModal = <button
+        onClick={e => { this.showModal() }}
+      >Hide Modal</button>
+    }
+
     return (
-      <Fragment>
+      <div className={this.state.toggledStylings}>
         <Navigation />
         <KBCard />
-        <button onClick={e => {
-          this.showModal();
-        }}>Show Modal</button>
+        {displayModal}
         <Modal onClose={this.showModal} show={this.state.show}>Message in Modal</Modal>
-      </Fragment >
+      </div>
     );
   }
 }

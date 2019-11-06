@@ -24,9 +24,9 @@ class KBCard extends Component {
 
 
     cardHandler = () => {
-        const cardDisplay = this.state.cardObj.map((card) => {
+        const cardDisplay = this.state.cardObj.map((card, index) => {
             return (
-                <Col xs={4}>
+                <Col key={index.toString()} xs={4}>
                     <a href="localhost:3000"
                         style={{
                             textDecoration: 'none',
