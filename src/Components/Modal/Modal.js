@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ModalForm from '../Form/Form'
 import './Modal.css'
 
 export default class Modal extends Component {
@@ -12,7 +13,9 @@ export default class Modal extends Component {
         return (
             <div className={classSet.join(' ')}>
                 <button className="btn btn-danger float-right" onClick={this.props.closeButton}>x</button>
-                <div className="content">{this.props.children}</div>
+                <div className="container py-4">
+                    <ModalForm />
+                </div>
                 <button className="btn btn-primary btn-lg btn-block">Submit</button>
             </div>
         )

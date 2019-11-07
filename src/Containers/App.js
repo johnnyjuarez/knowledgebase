@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Navigation from '../Components/Navbar/Navbar'
 import KBCard from '../Components/KBCard/KBCard'
 import Modal from '../Components/Modal/Modal'
-import ModalForm from '../Components/Form/Form'
 import './App.css';
 
 class App extends Component {
@@ -10,7 +9,23 @@ class App extends Component {
     super(props)
     this.state = {
       show: false,
-      toggledStylings: null
+      toggledStylings: null,
+      cardArr: [{
+        title: "Title",
+        description: "Description",
+        details: "Details"
+      },
+      {
+        title: "I hope",
+        description: "this creates",
+        details: "another card!"
+      },
+      {
+        title: "Test",
+        description: "Test Descript",
+        details: "Test details :)"
+      }
+      ]
     }
   }
 
@@ -37,25 +52,14 @@ class App extends Component {
   }
 
   render() {
-    // let displayModal = null;
-    // if (!this.state.show) {
-    //   displayModal = <button
-    //     onClick={e => { this.modalHandler() }}
-    //   >Show Modal</button>
-    // } else {
-    //   displayModal = <button
-    //     onClick={e => { this.modalHandler() }}
-    //   >Hide Modal</button>
-    // }
 
     return (
       <div className="app" >
         <Navigation />
         <div className={this.state.toggledStylings}>
-          <Modal closeButton={e => { this.modalOffHandler() }} onClose={this.showModal} show={this.state.show}><ModalForm /></Modal>
+          <Modal closeButton={e => { this.modalOffHandler() }} onClose={this.showModal} show={this.state.show}></Modal>
         </div>
-        <KBCard onclick={e => { this.modalHandler() }} />
-        {/* <Button onClick={e => { this.modalHandler() }}>Add</Button> */}
+        <KBCard cardArr={this.state.cardArr} onclick={e => { this.modalHandler() }} />
       </div>
     );
   }

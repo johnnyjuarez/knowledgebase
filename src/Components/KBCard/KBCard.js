@@ -5,26 +5,9 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
 class KBCard extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            cardObj: [{
-                title: "Title",
-                description: "Description",
-                details: "Details"
-            },
-            {
-                title: "I hope",
-                description: "this creates",
-                details: "another card!"
-            }
-            ]
-        }
-    }
-
 
     cardHandler = () => {
-        const cardDisplay = this.state.cardObj.map((card, index) => {
+        const cardDisplay = this.props.cardArr.map((card, index) => {
             return (
                 <Col key={index.toString()} xs={4}>
                     <a href="localhost:3000"
