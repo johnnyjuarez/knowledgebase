@@ -57,7 +57,7 @@ class KBCard extends Component {
         return (
             <Container>
                 {this.cardHandler()}
-                <Button variant="success">Add</Button>
+                <Button onClick={this.props.onclick} className="mt-4" variant="outline-success">Add</Button>
             </Container>
         )
     }
