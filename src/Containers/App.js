@@ -13,28 +13,42 @@ class App extends Component {
     }
   }
 
-  showModal = e => {
-    this.setState({
-      show: !this.state.show,
-      toggledStylings: "testModal"
-    })
+  modalHandler = e => {
+    if (this.state.show === true) {
+      this.setState({
+        show: !this.state.show,
+        toggledStylings: null
+      })
+    } else {
+      this.setState({
+        show: !this.state.show,
+        toggledStylings: "testModal"
+      })
+    }
+  }
+
+  modalOffHandler = () => {
+    if (this.state.show) {
+      this.modalHandler()
+    } else {
+      console.log("Nothing shows")
+    }
   }
 
   render() {
-
     let displayModal = null;
     if (!this.state.show) {
       displayModal = <button
-        onClick={e => { this.showModal() }}
+        onClick={e => { this.modalHandler() }}
       >Show Modal</button>
     } else {
       displayModal = <button
-        onClick={e => { this.showModal() }}
+        onClick={e => { this.modalHandler() }}
       >Hide Modal</button>
     }
 
     return (
-      <div>
+      <div onClick={e => { this.modalOffHandler() }}>
         <Navigation />
         <KBCard />
         {displayModal}
