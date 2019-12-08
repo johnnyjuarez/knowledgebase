@@ -16,15 +16,21 @@ class App extends Component {
         details: "Details"
       },
       {
-        title: "I hope",
-        description: "this creates",
-        details: "another card!"
+        title: "Test",
+        description: "Test Descript",
+        details: "Test details"
       },
       {
         title: "Test",
         description: "Test Descript",
-        details: "Test details :)"
-      }
+        details: "Test details"
+      },
+      {
+        title: "Test",
+        description: "Test Descript",
+        details: "Test details"
+      },
+
       ]
     }
   }

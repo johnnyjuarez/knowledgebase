@@ -1,22 +1,31 @@
 import React, { Component } from 'react'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
+
 import './Navbar.css'
 
 class Navigation extends Component {
     render() {
         return (
-            <Navbar className="navbar" expand="lg">
-                <Navbar.Brand bsPrefix="navbar" className="brandItem" href="#home">The Knowledge Base</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto">
-                        <Nav.Link bsPrefix="navbar-item" className="navItem" href="#home">Home</Nav.Link>
-                        <Nav.Link bsPrefix="navbar-item" className="navItem" href="#link">About</Nav.Link>
-                        <Nav.Link bsPrefix="navbar-item" className="navItem" href="#link">Contact</Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <a className="navbar-brand" href="localhost:3000">The Knowledgebase |</a>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="localhost:3000navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav mr-auto">
+                        <li className="nav-item active">
+                            <a className="nav-link" href="localhost:3000">Home <span className="sr-only">(current)</span></a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="localhost:3000">About</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="localhost:3000">Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
         )
     }
 }

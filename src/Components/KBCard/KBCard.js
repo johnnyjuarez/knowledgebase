@@ -1,47 +1,35 @@
 import React, { Component } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
+
+import './KBCard.css'
 
 class KBCard extends Component {
 
     cardHandler = () => {
+
+        console.log(this.props.cardArr);
         const cardDisplay = this.props.cardArr.map((card, index) => {
             return (
-                <Col key={index.toString()} xs={4}>
-                    <a href="localhost:3000"
-                        style={{
-                            textDecoration: 'none',
-                            color: 'black'
-                        }}
-                    >
-                        <Card style={{
-                            width: '18rem',
-                            marginTop: '20px',
-                            marginLeft: '5px'
-                        }}>
-                            <Card.Body>
-                                <Card.Title style={{ textAlign: 'center' }}>{card.title}</Card.Title>
-                                <Card.Text style={{ textAlign: 'center' }}>{card.description}</Card.Text>
-                                <Card.Text>{card.details}</Card.Text>
-                                <Button variant="info">Edit</Button>
-                                <Button variant="danger">Delete</Button>
-                            </Card.Body>
-                        </Card>
-                    </a>
-                </Col>
+                <a href="localhost:3000">
+                    <div key={index} className="card">
+                        <div className="card-body">
+                            <h5 className="card-title">{card.title}</h5>
+                            <p className="card-text">{card.description}</p>
+                            <p className="card-text">{card.description}</p>
+                        </div>
+                    </div>
+                </a>
             )
         })
         return cardDisplay
     }
 
+
+
     render() {
         return (
-            <Container>
+            <div className="cardContainer container">
                 {this.cardHandler()}
-                <Button onClick={this.props.onclick} className="mt-4" variant="outline-success">Add</Button>
-            </Container>
+            </div>
         )
     }
 }
